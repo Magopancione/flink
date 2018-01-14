@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
       - name: taskmanager
-        image: sonoilmagopancione/flink
+        image: sonoilmagopancione/flink:flinkv2
         args:
         - taskmanager
         ports:
@@ -28,3 +28,6 @@ spec:
         env:
         - name: JOB_MANAGER_RPC_ADDRESS
           value: flink-jobmanager
+        - name: TASKMANAGER_CPU
+          value: "1"
+

@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
       - name: jobmanager
-        image: sonoilmagopancione/flink
+        image: sonoilmagopancione/flink:flinkv1
         args:
         - jobmanager
         ports:
