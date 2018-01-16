@@ -1,1 +1,2 @@
-$FLINK_HOME/bin/flink run -c it.almaviva.giotto.processing.WordCount $FLINK_HOME/lib/flink-test-1.0-SNAPSHOT.jar
+#!/bin/sh
+/opt/flink/bin/flink run -c it.almaviva.giotto.processing.WordCount /opt/flink/lib/flink-test-1.0-SNAPSHOT.jar
