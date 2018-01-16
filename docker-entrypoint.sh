@@ -42,7 +42,6 @@ elif [ "$1" = "jobmanager" ]; then
 
     echo "config file: " && grep '^[^\n#]' "$FLINK_HOME/conf/flink-conf.yaml"
     exec $(drop_privs_cmd) flink "$FLINK_HOME/bin/jobmanager.sh" start-foreground cluster
-    "$FLINK_HOME/bin/flink run -c it.almaviva.giotto.processing.WordCount $FLINK_HOME/lib/flink-test-1.0-SNAPSHOT.jar"
 elif [ "$1" = "taskmanager" ]; then
     TASK_MANAGER_NUMBER_OF_TASK_SLOTS=${TASK_MANAGER_NUMBER_OF_TASK_SLOTS:-$(grep -c ^processor /proc/cpuinfo)}
 
