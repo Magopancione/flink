@@ -68,7 +68,7 @@ RUN set -ex; \
 # Configure container
 COPY flink-dependency-jar-1.0-SNAPSHOT.jar /opt/flink/lib/
 COPY flink-test-1.0-SNAPSHOT.jar /opt/flink/lib/
-COPY jobrun.sh /opt/flink/
+COPY jobrun.sh /
 COPY docker-entrypoint.sh /
 ENTRYPOINT ["/docker-entrypoint.sh"]
 EXPOSE 6123 8081
