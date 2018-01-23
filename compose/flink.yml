@@ -1,4 +1,4 @@
-version: "2"
+version: "3"
 services:
   flink-jobmanager:
     image: sonoilmagopancione/flink:flinkv2
@@ -25,3 +25,8 @@ services:
     environment:
       - TASKMANAGER_CPU=1
       - JOB_MANAGER_RPC_ADDRESS=flink-jobmanager
+    deploy:
+      resources:
+        limits:
+          cpus: '0.001'
+          memory: 50M
