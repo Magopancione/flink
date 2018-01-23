@@ -1,0 +1,27 @@
+version: "2"
+services:
+  flink-jobmanager:
+    image: sonoilmagopancione/flink:flinkv2
+    ports:
+      - "8081:8081"
+    expose:
+      - "6123"
+      - "6124"
+      - "6125"
+    command: jobmanager  
+    environment:
+      - JOB_MANAGER_RPC_ADDRESS=flink-jobmanager
+  flink-taskmanager:
+    image: sonoilmagopancione/flink:flinkv2
+    expose:
+      - "6121"
+      - "6122"
+      - "6125"
+    depends_on:
+      - flink-jobmanager
+    links:
+      - flink-jobmanager
+    command: taskmanager
+    environment:
+      - TASKMANAGER_CPU=1
+      - JOB_MANAGER_RPC_ADDRESS=flink-jobmanager
